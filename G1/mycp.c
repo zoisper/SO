@@ -1,5 +1,6 @@
 #include<unistd.h>
 #include<fcntl.h>
+#include<stdio.h>
 
 #define MAXBUFFER 10000
 
@@ -10,7 +11,7 @@ int main(int argc, char *argv[])
 	ssize_t res;
 	char buff[MAXBUFFER];
 
-	fd1 = open(argv[1], O_RDONLY, 0600);
+	fd1 = open(argv[1], O_RDONLY);
 	fd2 = open(argv[2], O_CREAT | O_WRONLY, 0600);
 
 	if (fd1 == -1)
