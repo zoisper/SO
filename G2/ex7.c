@@ -47,7 +47,8 @@ int main(){
 
 	for(i=0; i<SIZE; i++){
 		wait(&status);
-		printf("Linha: %d :: Existe?: %d\n",i, WEXITSTATUS(status));
+		if(WEXITSTATUS(status) == 1)
+			printf("Encontrado na linha: %d\n", i);
 	}
 		
 	return 0;
