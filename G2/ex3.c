@@ -12,8 +12,6 @@ int main(){
 	for(i = 0; i<10; i++){
 		
 		if((pid = fork()) == 0 ){
-			//printf("filho - pid: %d\n", getpid());
-			//printf("filho - pid pai : %d\n", getppid());
 			_exit(i);
 
 		}
