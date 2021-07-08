@@ -30,32 +30,26 @@ int main(){
 
 		if(fork()==0 )
 		{
+			
 			if(fork() == 0)
 			{
-
 				
 				dup2(fildes[2][1],1);
 				closePipes(fildes, 3);
 				execlp("grep","grep", "-v", "ˆ#", "/etc/passwd", NULL );
-
 			}
+			
 			else
 			{
 
-				
-				
-				
 				dup2(fildes[2][0],0);
 				dup2(fildes[1][1],1);
 				closePipes(fildes, 3);
 				execlp("cut", "cut", "-f7", "-d:", NULL);
-				
-
 			}
 		
 		}
 		
-
 		else
 		{
 			dup2(fildes[1][0],0);
@@ -65,12 +59,12 @@ int main(){
 		}
 
 	}
+	
 	else
 	{
 		dup2(fildes[0][0],0);
 		closePipes(fildes, 3);
 		execlp("wc", "wc", "-l", NULL);
-		
 	}
 
 

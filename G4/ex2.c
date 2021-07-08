@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 	close(o_fd);
 	close(e_fd);
 
-	setbuf(stdout,NULL); // Exemplo de uso do stbuf para desabilitaro buffer
+	setbuf(stdout,NULL); // Exemplo de uso do stbuf para desabilitar o buffer
 
 	int n_lines = 10;
 	char buffer;
