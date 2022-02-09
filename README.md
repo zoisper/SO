@@ -1,2 +1,3 @@
-# Sistemas Operativos
+# SO
+Sistemas Operativos
 
